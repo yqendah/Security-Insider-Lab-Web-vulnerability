@@ -1,0 +1,35 @@
+<?php
+/*
+** FILE: htbinfo.page
+** PURPOSE: displays some general info on portal (also for users not logged in)
+** AUTHOR(S): Daniel Schreckling
+*/
+?>
+<table cellspacing="0" cellpadding="2" class="tblInfo">
+	<tr><td>
+		<p>
+		&quot;The most damaging targeted attacks - those against specific businesses -
+		have focused on vulnerabilities in Web applications and custom-developed
+		software.&quot;<br><i>Gartner Group</i>
+		</p>
+	</td></tr>
+</table>
+<br>
+<table cellspacing="0" cellpadding="2" class="tblInfo">
+	<tr><td>
+		<p>
+		&quot;...without a Trustworthy Computing ecosystem, the full promise of technology to help
+		people and businesses realize their potential will not be fulfilled.&quot;<br>
+		<i>Bill Gates</i>
+		</p>
+	</td></tr>
+</table>
+<br>
+<table cellspacing="0" cellpadding="2" class="tblInfo">
+	<tr><td>
+		<p>
+		&quot;Secure software exits with a good return code not with a shell.&quot;<br>
+		<i>Venard Luxe</i>
+		</p>
+	</td></tr>
+</table>

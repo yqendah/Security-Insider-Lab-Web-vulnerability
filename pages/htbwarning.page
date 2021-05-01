@@ -1,0 +1,15 @@
+<?php
+/*
+** FILE: htbwarning.page
+** PURPOSE: displays a warning message
+** AUTHOR(S): Daniel Schreckling
+*/
+?>
+<table cellspacing="0" cellpadding="2" class="tblError">
+	<tr><th>Warning</th></tr>
+	<tr><td>
+		<?php
+			print $_SESSION['warning'];
+		?>
+	</td></tr>
+</table>

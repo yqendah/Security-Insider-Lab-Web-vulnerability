@@ -1,0 +1,15 @@
+<?php
+/*
+** FILE: htbsuccess.page
+** PURPOSE: displays a success message
+** AUTHOR(S): Daniel Schreckling
+*/
+?>
+<table cellspacing="0" cellpadding="2" class="tblSuccess">
+	<tr><th>Success</th></tr>
+	<tr><td>
+		<?php
+			print $_SESSION['success'];
+		?>
+	</td></tr>
+</table>

@@ -1,0 +1,15 @@
+<?php
+/*
+** FILE: htberror.page
+** PURPOSE: simply displays an error
+** AUTHOR(S): Daniel Schreckling
+*/
+?>
+<table cellspacing="0" cellpadding="2" class="tblError">
+	<tr><th>Error</th></tr>
+	<tr><td>
+		<?php
+		print $_SESSION['error'];
+		?>
+	</td></tr>
+</table>

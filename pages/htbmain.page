@@ -1,0 +1,28 @@
+<?php
+/*
+** FILE: htbmain.page
+** PURPOSE: shows the main page of this app (e.g. after login)
+** AUTHOR(S): Daniel Schreckling
+*/
+?>
+<table cellpadding="2" cellspacing="0" class="tblInfo">
+	<tr>
+		<?php
+			print "<th>Welcome ".$_SESSION['firstname']." ".$_SESSION['name']."</th>";
+		?>
+	</tr>
+	<tr>
+		<td>
+			<?php
+				global $htbconf;
+				print "<p>Welcome <b>".$_SESSION['firstname']." ".$_SESSION['name']."!</b></p>\n";
+				print "<p>We are happy to see you again! You are a customer of our bank since ".date("Y-m-d", $_SESSION['time']).".</p><br>\n";
+				print "<p>You are logged in as <b>".$_SESSION['user']."</b> from <b>".$_SERVER['REMOTE_ADDR']."</b></p>\n";
+				print "<p>For security reasons please make sure that your last login was on <b>".date("l, F d, Y, h:ia", $_SESSION['lastlogin'])."</b> from <b>".$_SESSION['lastloginip']."</b>.</p><br>\n";
+				print "<p>Please contact us if you experience any problems with our online banking application.</p><br>\n";
+				print "<p>We wish you a nice day!</p><br>";
+				print "<span style='text-align:right'><p>Your Online Banking team<br><b>".$htbconf['bank/name']."</b></p></span>";
+			?>
+		</td>
+	</tr>
+</table>

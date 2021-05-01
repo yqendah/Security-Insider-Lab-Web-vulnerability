@@ -1,0 +1,51 @@
+<?php
+/*
+** FILE: htbaccounts.page
+** PURPOSE: displays all accounts of a user of this bank
+** AUTHOR(S): Daniel Schreckling
+*/
+?>
+<table cellspacing="0" cellpadding="4" class="tblInfo">
+	<tr>
+		<th>
+			My Account Information
+		</th>
+	</tr>
+	<tr>
+		<td align="left">
+			<p>Please click on the links to transact further</p>
+			<table cellspacing="1" cellpadding="3" class="tblList" align="center">
+				<tr>
+					<th>Account No</th>
+					<th>Branch</th>
+					<th>Account Type</th>
+					<th>&nbsp;</th>
+				</tr>
+				<?php
+				global $db_link, $xorValue, $htbconf;
+				// query the accounts database for the accounts of user with specific userid join tables that contain information about the account type and branch names
+				$sql="SELECT a.".$htbconf['db/accounts.account'].", t.".$htbconf['db/types.name'].", b.".$htbconf['db/branches.name']." from ". $htbconf['db/accounts']." a, ".$htbconf['db/types']." t, ".$htbconf['db/branches']." b where "."a.".$htbconf['db/accounts.owner']."=".$_SESSION['userid']." and ". "t.".$htbconf['db/types.id']."=a.".$htbconf['db/accounts.type']." and ". "b.".$htbconf['db/branches.id']."=a.".$htbconf['db/accounts.branch'];
+				$result = mysql_query($sql, $db_link);
+				// find number of results
+				$matches = mysql_num_rows($result);
+				// iterate through all accounts and fill the table
+				for($i=0; $i < $matches; $i++) {
+					$row = mysql_fetch_row($result);
+					print "<tr ";
+					if($i % 2 == 0) {
+					print "class=\"evenRow\">\n";
+					} else {
+					print "class=\"oddRow\">\n";
+					}
+					print "<td>".$row[0]."</td><td>".$row[2]."</td><td>".$row[1]."</td>";
+					// "prevent" the actual account number to be displayed in plain text
+					$xoredAcc = $row[0] ^ $xorValue;
+					// create a link to the account details and include the encrypted account number
+					print "<td class=\"right\"><a href=\"".htb_pageurl('htbdetails&account='.$xoredAcc)."\">Account Details</a></td>";
+					print "</tr>";
+				}
+				?>
+			</table>
+		</td>
+	</tr>
+</table>

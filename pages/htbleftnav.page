@@ -1,0 +1,100 @@
+<?php
+/*
+** FILE: htbleftnav.page
+** PURPOSE: displays some navigation on the left
+** AUTHOR(S): Daniel Schreckling
+*/
+?>
+<table cellspacing="0" cellpadding="0" class="tblLeftNav">
+	<tr class="menu_light">
+		<td><img src="images/clear.gif" width="1" height="1" align="left"></td>
+	</tr>
+	<tr class="menu_dark">
+		<td><table border="0" cellspacing="3" cellpadding="3">
+			<tr>
+				<td class="menu_dark">
+					<img src="images/nav_arrows.gif">&nbsp;<a href="<?php print htb_pageurl("htbtransfer");?>">Transfer Funds</a>
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+<tr class="menu_light">
+	<td><img src="images/clear.gif" width="1" height="1" align="left"></td>
+</tr>
+<tr class="menu_dark">
+	<td><table border="0" cellspacing="3" cellpadding="3">
+		<tr>
+			<td class="menu_dark">
+				<img src="images/nav_arrows.gif">&nbsp;<a href="<?php print htb_pageurl("htbloanreq");?>">Request a Loan</a>
+			</td>
+		</tr>
+	</table>
+</td>
+</tr>
+<tr class="menu_light">
+<td><img src="images/clear.gif" width="1" height="1" align="left"></td>
+</tr>
+<tr class="menu_dark">
+<td><table border="0" cellspacing="3" cellpadding="3">
+	<tr>
+		<td class="menu_dark">
+			<img src="images/nav_arrows.gif">&nbsp;<a href="<?php print htb_pageurl("htbloans");?>">My Loans</a>
+		</td>
+	</tr>
+</table>
+</td>
+</tr>
+<tr class="menu_light">
+<td><img src="images/clear.gif" width="1" height="1" align="left"></td>
+</tr>
+<tr class="menu_dark">
+<td><table border="0" cellspacing="3" cellpadding="3">
+<tr>
+	<td class="menu_dark">
+		<img src="images/nav_arrows.gif">&nbsp;<a href="<?php print htb_pageurl("htbaccounts");?>">My Accounts</a>
+	</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="menu_light">
+<td><img src="images/clear.gif" width="1" height="1" align="left"></td>
+</tr>
+<tr class="menu_dark">
+<td><table border="0" cellspacing="3" cellpadding="3">
+<tr>
+<td class="menu_dark">
+	<img src="images/nav_arrows.gif">&nbsp;<a href="<?php print htb_pageurl("htbchgpwd");?>">Change Password</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="menu_light">
+<td><img src="images/clear.gif" width="1" height="1" align="left"></td>
+</tr>
+<tr class="menu_dark">
+<td><img src="images/clear.gif" width="1" height="50" align="left"></td>
+</tr>
+<tr class="menu_light">
+<td><img src="images/clear.gif" width="1" height="1" align="left"></td>
+</tr>
+<tr class="menu_dark">
+<td><table border="0" cellspacing="3" cellpadding="3">
+<tr>
+<td class="menu_dark">
+<img src="images/nav_arrows.gif">&nbsp;<a href="<?php print htb_pageurl("htblogout");?>">Logout</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="menu_light">
+<td><img src="images/clear.gif" width="1" height="1" align="left"></td>
+</tr>
+<tr>
+<td><img src="images/clear.gif" width="10" height="50"></td>
+</tr>
+</table>
+<p>&nbsp;</p>

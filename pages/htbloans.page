@@ -1,0 +1,58 @@
+<?php
+/*
+** FILE: htbloans.page
+** PURPOSE: displays all loans of a user and offers the possibility to show more info on them
+** AUTHOR(S): Daniel Schreckling
+*/
+?>
+<table cellspacing="0" cellpadding="4" class="tblInfo">
+	<tr><th>My Loans</th></tr>
+	<tr>
+		<td>
+			<p>Please click on the links to get more details on loan</p>
+			<table cellspacing="1" cellpadding="3" class="tblList" align="center">
+				<tr>
+					<th>Credit&nbsp;Ac.</th>
+					<th>Debit&nbsp;Ac.</th>
+					<th>Issued</th>
+					<th>Amount</th>
+					<th>Period</th>
+					<th class="right">Interest</th>
+					<th>&nbsp;</th>
+				</tr>
+				<?php
+				global $db_link, $xorValue, $htbconf;
+				$result = mysql_query("SELECT ".$htbconf['db/loans.creditacc'].", ".
+										$htbconf['db/loans.debitacc'].", ".
+										$htbconf['db/loans.time'].", ".
+										$htbconf['db/loans.amount'].", ".
+										$htbconf['db/loans.period'].", ".
+										$htbconf['db/loans.interest'].", ".
+										$htbconf['db/loans.id']." FROM ".$htbconf['db/loans']." where ".
+										$htbconf['db/loans.owner']."=".$_SESSION['userid'], $db_link);
+										
+				$matches = mysql_num_rows($result);
+				for($i=0; $i < $matches; $i++) {
+					$row = mysql_fetch_row($result);
+					print "<tr ";
+					if($i % 2 == 0) {
+						print "class=\"evenRow\">\n";
+					} else {
+						print "class=\"oddRow\">\n";
+					}
+					print "
+					<td>".$row[0]."</td>
+					<td>".$row[1]."</td>
+					<td>".date("Y-m-d", strtotime($row[2]))."</td>
+					<td class=\"right\">".$row[3]."&nbsp;USD</td>
+					<td class=\"right\">".$row[4]."</td>
+					<td class=\"right\">".$row[5]."%</td>\n";
+					$xoredId = $row[6] ^ $xorValue;
+					print "<td class=\"right\"><a href=\"".htb_pageurl('htbamortisation&loan='.$xoredId)."\">Amortisation</a></td>\n";
+					print "</tr>\n";
+				}
+				?>
+			</table>
+		</td>
+	</tr>
+</table>

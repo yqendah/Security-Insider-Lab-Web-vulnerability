@@ -1,0 +1,54 @@
+<?php
+/*
+** FILE: htblogin.page
+** PURPOSE: generates the login dialog
+** AUTHOR(S): Daniel Schreckling
+*/
+?>
+<form action="" method="post" name="loginForm">
+	<table width="145" border="0" cellspacing="0" cellpadding="0" align="center">
+		<tr class="deco">
+			<td>
+				<img src="images/login/top.gif" width="145" height="21">
+			</td>
+		</tr>
+		<tr>
+			<td background="images/login/topbg.gif" align="center">
+				<table width="130" border="0" cellspacing="0" cellpadding="2" border="0">
+					<tr>
+						<td><span class="loginTxt">Username:</span></td>
+						<td><input type="text" name="username" class="loginTxtBox"></td>
+					</tr>
+					<tr>
+						<td><span class="loginTxt">Password:</span></td>
+						<td><input type="password" name="password" class="loginTxtBox"></td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td align="right"><input type="button" value="login" class="loginBtn" onClick="return checkform();"></td>
+					</tr>
+				</table>
+			</td>
+			<tr class="deco">
+				<td valign="top">
+					<img src="images/login/bottom.gif" width="145" height="6">
+				</td>
+			</tr>
+			<tr>
+				<td valign="top">
+					<br>
+					<script language="JavaScript">
+					<!--
+					-->
+					</script>
+					<noscript>
+					<font color="red">
+					<center>You need to have Java Script enabled to login!</center>
+					</font>
+					</noscript>
+					<img src="images/clear.gif" class="deco" width="1" height="10">
+				</td>
+			</tr>
+		</table>
+		<p>&nbsp;</p>
+	</form>
